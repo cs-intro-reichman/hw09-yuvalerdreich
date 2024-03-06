@@ -55,7 +55,7 @@ public class LanguageModel {
             probs.update(c);
 
             window += c;
-            window = window.substring(1)
+            window = window.substring(1);
             
         }
         for(List probs : CharDataMap.values()) {
@@ -110,13 +110,13 @@ public class LanguageModel {
         if (initialText.length() < windowLength) {
             return initialText;
         }
-        List last = CharDataMap.get(initialText.substring(initialText.length()-windowLength));
+        List last = CharDataMap.get(initialText.substring(initialText.length() - windowLength));
         if (last == null) {
             return initialText;
             
         }
 
-        String window = initialText.substring(initialText.length()-windowLength);
+        String window = initialText.substring(initialText.length() - windowLength);
         String generatedText = window;
         while (generatedText.length() < (textLength + windowLength)) {
             List probs = CharDataMap.get(window);
